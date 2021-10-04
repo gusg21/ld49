@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://map/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://box/Box Square Small.tscn" type="PackedScene" id=3]
+[ext_resource path="res://door/door2.png" type="Texture" id=4]
+[ext_resource path="res://spike/Spike.tscn" type="PackedScene" id=5]
+[ext_resource path="res://door/End Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/Level4.tscn" type="PackedScene" id=9]
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 4, 0, 65538, 32, 0, 65536, 65540, 0, 65538, 65568, 0, 65536, 131076, 0, 65538, 131104, 0, 65536, 196612, 0, 65538, 196640, 0, 65536, 262148, 0, 65538, 262149, 0, 131073, 262150, 0, 131073, 262151, 0, 131073, 262152, 0, 131073, 262153, 0, 131073, 262154, 0, 131073, 262155, 0, 131073, 262156, 0, 131073, 262157, 0, 131073, 262158, 0, 131073, 262159, 0, 131073, 262160, 0, 131073, 262161, 0, 131073, 262162, 0, 131073, 262163, 0, 131073, 262164, 0, 131073, 262165, 0, 131073, 262166, 0, 131073, 262167, 0, 131073, 262168, 0, 131073, 262169, 0, 131073, 262170, 0, 131073, 262171, 0, 131073, 262172, 0, 131073, 262173, 0, 131073, 262174, 0, 131073, 262175, 0, 131073, 262176, 0, 65536, 327684, 0, 65538, 327700, 0, 65536, 327712, 0, 65536, 393220, 0, 65538, 393236, 0, 65536, 393248, 0, 65536, 458756, 0, 65538, 458772, 0, 65536, 458784, 0, 65536, 524292, 0, 65538, 524293, 0, 196613, 524296, 0, 196612, 524308, 0, 65536, 524320, 0, 65536, 589828, 0, 65538, 589832, 0, 262148, 589844, 0, 65536, 589856, 0, 65536, 655364, 0, 65538, 655368, 0, 327684, 655380, 0, 65536, 655392, 0, 65536, 720900, 0, 65538, 720916, 0, 65536, 720928, 0, 65536, 786436, 0, 65538, 786444, 0, 0, 786445, 0, 1, 786446, 0, 1, 786447, 0, 1, 786448, 0, 1, 786449, 0, 1, 786450, 0, 1, 786451, 0, 1, 786452, 0, 1, 786453, 0, 1, 786454, 0, 1, 786455, 0, 1, 786456, 0, 1, 786457, 0, 1, 786458, 0, 1, 786459, 0, 1, 786460, 0, 1, 786461, 0, 1, 786462, 0, 1, 786463, 0, 1, 786464, 0, 65536, 851972, 0, 65538, 851980, 0, 65536, 852000, 0, 65536, 917508, 0, 65538, 917516, 0, 65536, 917536, 0, 65536, 983044, 0, 65538, 983052, 0, 131072, 983053, 0, 131073, 983054, 0, 131073, 983055, 0, 131073, 983056, 0, 131073, 983057, 0, 131073, 983058, 0, 131073, 983059, 0, 131073, 983060, 0, 131073, 983061, 0, 131073, 983062, 0, 131073, 983063, 0, 131073, 983064, 0, 131073, 983065, 0, 131073, 983066, 0, 131073, 983067, 0, 131073, 983068, 0, 131073, 983069, 0, 131073, 983070, 0, 131073, 983071, 0, 131073, 983072, 0, 65536, 1048580, 0, 65538, 1048603, 0, 4, 1048608, 0, 65536, 1114116, 0, 65538, 1114139, 0, 131076, 1114140, 0, 131077, 1114144, 0, 65536, 1179652, 0, 65538, 1179680, 0, 65536, 1245188, 0, 65538, 1245189, 0, 1, 1245190, 0, 1, 1245191, 0, 1, 1245192, 0, 1, 1245193, 0, 1, 1245194, 0, 1, 1245195, 0, 1, 1245196, 0, 1, 1245197, 0, 1, 1245198, 0, 1, 1245199, 0, 1, 1245200, 0, 1, 1245201, 0, 1, 1245202, 0, 1, 1245203, 0, 1, 1245204, 0, 1, 1245205, 0, 1, 1245206, 0, 2, 1245216, 0, 65536, 1310724, 0, 65538, 1310742, 0, 65538, 1310752, 0, 65536, 1376260, 0, 65538, 1376278, 0, 65538, 1376288, 0, 65536, 1441796, 0, 65538, 1441797, 0, 131073, 1441798, 0, 131073, 1441799, 0, 131073, 1441800, 0, 131073, 1441801, 0, 131073, 1441802, 0, 131073, 1441803, 0, 131073, 1441804, 0, 131073, 1441805, 0, 131073, 1441806, 0, 131073, 1441807, 0, 131073, 1441808, 0, 131073, 1441809, 0, 131073, 1441810, 0, 131073, 1441811, 0, 131073, 1441812, 0, 131073, 1441813, 0, 131073, 1441814, 0, 131073, 1441815, 0, 196609, 1441816, 0, 196610, 1441824, 0, 65536, 1507332, 0, 65538, 1507360, 0, 65536, 1572868, 0, 65538, 1572892, 0, 0, 1572893, 0, 1, 1572894, 0, 1, 1572895, 0, 1, 1572896, 0, 65536, 1638404, 0, 65538, 1638428, 0, 65536, 1638432, 0, 65536, 1703940, 0, 65538, 1703964, 0, 65536, 1703968, 0, 65536, 1769476, 0, 65538, 1769500, 0, 65536, 1769504, 0, 65536, 1835012, 0, 65538, 1835036, 0, 65536, 1835040, 0, 65536, 1900548, 0, 65538, 1900572, 0, 65536, 1900576, 0, 65536, 1966084, 0, 65538, 1966085, 0, 1, 1966086, 0, 1, 1966087, 0, 1, 1966088, 0, 1, 1966089, 0, 1, 1966090, 0, 1, 1966091, 0, 1, 1966092, 0, 1, 1966093, 0, 1, 1966094, 0, 1, 1966095, 0, 1, 1966096, 0, 1, 1966097, 0, 1, 1966098, 0, 1, 1966099, 0, 1, 1966100, 0, 1, 1966101, 0, 1, 1966102, 0, 1, 1966103, 0, 1, 1966104, 0, 1, 1966105, 0, 1, 1966106, 0, 1, 1966107, 0, 1, 1966108, 0, 1, 1966109, 0, 1, 1966110, 0, 1, 1966111, 0, 1, 1966112, 0, 65536, 2031620, 0, 65538, 2031648, 0, 65536, 2097156, 0, 65538, 2097184, 0, 65536, 2162692, 0, 65538, 2162720, 0, 65536, 2228228, 0, 65538, 2228256, 0, 65536, 2293764, 0, 65538, 2293792, 0, 65536, 2359300, 0, 65538, 2359328, 0, 65536, 2424836, 0, 65538, 2424864, 0, 65536 )
+
+[node name="Start Door" type="Sprite" parent="TileMap"]
+position = Vector2( 108, 456 )
+texture = ExtResource( 4 )
+
+[node name="End Door" parent="TileMap" instance=ExtResource( 6 )]
+position = Vector2( 243, 168 )
+scene = ExtResource( 9 )
+
+[node name="Spikes" type="Node2D" parent="TileMap"]
+
+[node name="Spike7" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 167, 476 )
+
+[node name="Spike8" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 173, 476 )
+
+[node name="Spike9" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 179, 476 )
+
+[node name="Spike10" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 185, 476 )
+
+[node name="Spike11" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 191, 476 )
+
+[node name="Spike12" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 197, 476 )
+
+[node name="Spike13" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 203, 476 )
+
+[node name="Spike14" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 209, 476 )
+
+[node name="Spike15" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 215, 476 )
+
+[node name="Spike16" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 221, 476 )
+
+[node name="Spike17" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 227, 476 )
+
+[node name="Spike18" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 233, 476 )
+
+[node name="Spike19" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 239, 476 )
+
+[node name="Spike20" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 245, 476 )
+
+[node name="Spike21" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 251, 476 )
+
+[node name="Spike22" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 257, 476 )
+
+[node name="Spike23" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 263, 476 )
+
+[node name="Spike24" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 269, 476 )
+
+[node name="Spike25" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 275, 476 )
+
+[node name="Spike26" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 281, 476 )
+
+[node name="Spike27" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 287, 476 )
+
+[node name="Spike28" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 293, 476 )
+
+[node name="Spike29" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 299, 476 )
+
+[node name="Spike30" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 305, 476 )
+
+[node name="Spike31" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 311, 476 )
+
+[node name="Spike32" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 317, 476 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 143, 473 )
+
+[node name="Box" parent="." instance=ExtResource( 3 )]
+position = Vector2( 403, 467 )
+
+[node name="Box3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 305, 466 )

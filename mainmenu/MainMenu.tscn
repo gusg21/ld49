@@ -1,0 +1,162 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://mainmenu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://mainmenu/shimmy.wav" type="AudioStream" id=2]
+[ext_resource path="res://mainmenu/elliott_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://mainmenu/elliott.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://mainmenu/select5.png" type="Texture" id=5]
+[ext_resource path="res://mainmenu/select3.png" type="Texture" id=6]
+[ext_resource path="res://mainmenu/select4.png" type="Texture" id=7]
+[ext_resource path="res://mainmenu/select1.png" type="Texture" id=8]
+[ext_resource path="res://mainmenu/select2.png" type="Texture" id=9]
+[ext_resource path="res://mainmenu/select6.png" type="Texture" id=10]
+[ext_resource path="res://mainmenu/gamepad.png" type="Texture" id=11]
+[ext_resource path="res://mainmenu/kb.png" type="Texture" id=12]
+[ext_resource path="res://mainmenu/ground.png" type="Texture" id=13]
+[ext_resource path="res://box/Box.tscn" type="PackedScene" id=14]
+[ext_resource path="res://mainmenu/Box Spawn.gd" type="Script" id=15]
+[ext_resource path="res://player/PlayerCamera.tscn" type="PackedScene" id=16]
+[ext_resource path="res://mainmenu/Wobble Spawn.gd" type="Script" id=17]
+[ext_resource path="res://mainmenu/Wobble.tscn" type="PackedScene" id=18]
+[ext_resource path="res://mainmenu/select.wav" type="AudioStream" id=19]
+[ext_resource path="res://mainmenu/confirm.wav" type="AudioStream" id=20]
+[ext_resource path="res://levels/BGM.gd" type="Script" id=21]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 266, 10 )
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 1 )
+selectors = [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 10 ) ]
+controller_icon = ExtResource( 11 )
+kb_icon = ExtResource( 12 )
+
+[node name="Camera" parent="." instance=ExtResource( 16 )]
+limit_left = -1000000
+limit_top = -10000000
+
+[node name="Play" type="Label" parent="Camera"]
+margin_left = -20.0
+margin_top = -23.0
+margin_right = 20.0
+margin_bottom = -9.0
+custom_fonts/font = ExtResource( 3 )
+text = "Play"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="Camera"]
+margin_left = -20.0
+margin_top = -8.0
+margin_right = 20.0
+margin_bottom = 6.0
+custom_fonts/font = ExtResource( 3 )
+text = "Credits"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Label" parent="Camera"]
+margin_left = -20.0
+margin_top = 7.0
+margin_right = 20.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 3 )
+text = "Quit"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="RichTextLabel" parent="Camera"]
+margin_left = -100.0
+margin_top = -75.0
+margin_right = 100.0
+margin_bottom = -35.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center][wave][rainbow]WOBBLE[/rainbow][/wave][/center]"
+text = "WOBBLE"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Select" type="Sprite" parent="Camera"]
+position = Vector2( -29, -16 )
+texture = ExtResource( 8 )
+
+[node name="InputInd" type="Sprite" parent="Camera"]
+position = Vector2( 0, 44 )
+texture = ExtResource( 11 )
+
+[node name="Fade" type="TextureRect" parent="Camera"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 13.127
+bus = "Music"
+script = ExtResource( 21 )
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -2.019
+bus = "SFX"
+
+[node name="Confirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -4.039
+bus = "SFX"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
+[node name="Tower" type="Node2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="Tower"]
+
+[node name="Collider" type="CollisionShape2D" parent="Tower/Ground"]
+position = Vector2( 0, 89 )
+shape = SubResource( 2 )
+
+[node name="Ground" type="Sprite" parent="Tower/Ground"]
+position = Vector2( 41.5, 84 )
+scale = Vector2( 136, 1 )
+texture = ExtResource( 13 )
+
+[node name="Box Spawn" type="Node2D" parent="Tower"]
+position = Vector2( -91, -216 )
+script = ExtResource( 15 )
+box_scene = ExtResource( 14 )
+
+[node name="Timer" type="Timer" parent="Tower/Box Spawn"]
+wait_time = 7.357
+autostart = true
+
+[node name="Wobble Spawn" type="Node2D" parent="Tower"]
+position = Vector2( 361, -43 )
+script = ExtResource( 17 )
+wobble_scene = ExtResource( 18 )
+
+[node name="Timer" type="Timer" parent="Tower/Wobble Spawn"]
+wait_time = 10.469
+autostart = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Tower/Box Spawn/Timer" to="Tower/Box Spawn" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Tower/Wobble Spawn/Timer" to="Tower/Wobble Spawn" method="_on_Timer_timeout"]

@@ -1,0 +1,967 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://map/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://box/Box Square.tscn" type="PackedScene" id=3]
+[ext_resource path="res://door/door2.png" type="Texture" id=4]
+[ext_resource path="res://spike/Spike.tscn" type="PackedScene" id=5]
+[ext_resource path="res://door/End Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://death/Death.tscn" type="PackedScene" id=9]
+[ext_resource path="res://blocker/Blocker.tscn" type="PackedScene" id=10]
+[ext_resource path="res://blocker/blocker-decal.png" type="Texture" id=11]
+[ext_resource path="res://levels/Level7.tscn" type="PackedScene" id=13]
+[ext_resource path="res://map/painting3.png" type="Texture" id=14]
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -524286, 0, 65538, -458750, 0, 65538, -458716, 0, 65536, -393214, 0, 65538, -393180, 0, 65536, -327678, 0, 65538, -327644, 0, 65536, -262142, 0, 65538, -262108, 0, 65536, -196606, 0, 65538, -196572, 0, 65536, -131070, 0, 65538, -131036, 0, 65536, -65534, 0, 65538, -65500, 0, 65536, 2, 0, 65538, 36, 0, 65536, 65538, 0, 65538, 65572, 0, 65536, 131074, 0, 65538, 131108, 0, 65536, 196610, 0, 65538, 196644, 0, 65536, 262146, 0, 65538, 262180, 0, 65536, 327682, 0, 65538, 327716, 0, 65536, 393218, 0, 65538, 393252, 0, 65536, 458754, 0, 65538, 458761, 0, 0, 458762, 0, 1, 458763, 0, 1, 458764, 0, 1, 458765, 0, 1, 458766, 0, 2, 458788, 0, 65536, 524290, 0, 65538, 524297, 0, 131072, 524298, 0, 131073, 524299, 0, 131073, 524300, 0, 131073, 524301, 0, 131073, 524302, 0, 131074, 524324, 0, 65536, 589826, 0, 65538, 589860, 0, 65536, 655362, 0, 65538, 655396, 0, 65536, 720898, 0, 65538, 720932, 0, 65536, 786434, 0, 65538, 786468, 0, 65536, 851970, 0, 65538, 852004, 0, 65536, 917506, 0, 65538, 917540, 0, 65536, 983042, 0, 65538, 983076, 0, 65536, 1048578, 0, 65538, 1048612, 0, 65536, 1114114, 0, 65538, 1114148, 0, 65536, 1245170, 0, 1, 1245171, 0, 1, 1245172, 0, 1, 1245173, 0, 1, 1245174, 0, 1, 1245175, 0, 1, 1245176, 0, 1, 1245177, 0, 1, 1245178, 0, 1, 1245179, 0, 1, 1245180, 0, 1, 1245181, 0, 1, 1245182, 0, 1, 1245183, 0, 1, 1179648, 0, 1, 1179649, 0, 1, 1179650, 0, 1, 1179651, 0, 1, 1179652, 0, 1, 1179653, 0, 1, 1179654, 0, 1, 1179655, 0, 1, 1179656, 0, 1, 1179657, 0, 1, 1179658, 0, 1, 1179659, 0, 2, 1179672, 0, 3, 1179684, 0, 65536, 1245195, 0, 65538, 1245208, 0, 65539, 1245220, 0, 65536, 1310731, 0, 65538, 1310744, 0, 65539, 1310756, 0, 65536, 1376267, 0, 65538, 1376280, 0, 65539, 1376285, 0, 0, 1376286, 0, 1, 1376287, 0, 1, 1376288, 0, 1, 1376289, 0, 1, 1376290, 0, 1, 1376291, 0, 1, 1376292, 0, 1, 1376293, 0, 1, 1376294, 0, 1, 1376295, 0, 1, 1376296, 0, 1, 1376297, 0, 1, 1376298, 0, 1, 1376299, 0, 1, 1376300, 0, 1, 1376301, 0, 1, 1376302, 0, 1, 1376303, 0, 1, 1376304, 0, 1, 1376305, 0, 1, 1376306, 0, 1, 1376307, 0, 1, 1376308, 0, 1, 1376309, 0, 1, 1376310, 0, 1, 1376311, 0, 1, 1376312, 0, 1, 1376313, 0, 1, 1441803, 0, 65538, 1441816, 0, 65539, 1441821, 0, 65536, 1507340, 0, 1, 1507341, 0, 1, 1507342, 0, 1, 1507343, 0, 1, 1507344, 0, 1, 1507345, 0, 1, 1507346, 0, 1, 1507347, 0, 1, 1507348, 0, 1, 1507349, 0, 1, 1507350, 0, 1, 1507351, 0, 1, 1507353, 0, 1, 1507354, 0, 1, 1507355, 0, 1, 1507356, 0, 1 )
+
+[node name="Torches" type="Node2D" parent="TileMap"]
+
+[node name="Misc" type="Node2D" parent="TileMap"]
+
+[node name="blocker-decal" type="Sprite" parent="TileMap/Misc"]
+position = Vector2( 344, 277 )
+texture = ExtResource( 11 )
+
+[node name="Start Door" type="Sprite" parent="TileMap"]
+position = Vector2( 554, 312 )
+texture = ExtResource( 4 )
+
+[node name="End Door" parent="TileMap" instance=ExtResource( 6 )]
+position = Vector2( 222, 88 )
+scene = ExtResource( 13 )
+
+[node name="Spikes" type="Node2D" parent="TileMap"]
+
+[node name="Spike" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 243, 364 )
+
+[node name="Spike2" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 249, 364 )
+
+[node name="Spike3" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 255, 364 )
+
+[node name="Spike19" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 98 )
+rotation = 1.57079
+
+[node name="Spike20" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 104 )
+rotation = 1.57079
+
+[node name="Spike21" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 110 )
+rotation = 1.57079
+
+[node name="Spike22" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 116 )
+rotation = 1.57079
+
+[node name="Spike23" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 122 )
+rotation = 1.57079
+
+[node name="Spike24" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 128 )
+rotation = 1.57079
+
+[node name="Spike44" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 140, 127 )
+rotation = -1.57079
+
+[node name="Spike45" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 140, 133 )
+rotation = -1.57079
+
+[node name="Spike46" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 140, 139 )
+rotation = -1.57079
+
+[node name="Spike47" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 140, 115 )
+rotation = -1.57079
+
+[node name="Spike48" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 140, 121 )
+rotation = -1.57079
+
+[node name="Spike25" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 134 )
+rotation = 1.57079
+
+[node name="Spike26" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 140 )
+rotation = 1.57079
+
+[node name="Spike27" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 146 )
+rotation = 1.57079
+
+[node name="Spike28" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 152 )
+rotation = 1.57079
+
+[node name="Spike29" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 158 )
+rotation = 1.57079
+
+[node name="Spike30" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 164 )
+rotation = 1.57079
+
+[node name="Spike31" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 170 )
+rotation = 1.57079
+
+[node name="Spike32" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 176 )
+rotation = 1.57079
+
+[node name="Spike33" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 182 )
+rotation = 1.57079
+
+[node name="Spike34" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 188 )
+rotation = 1.57079
+
+[node name="Spike35" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 194 )
+rotation = 1.57079
+
+[node name="Spike36" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 200 )
+rotation = 1.57079
+
+[node name="Spike37" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 206 )
+rotation = 1.57079
+
+[node name="Spike38" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 212 )
+rotation = 1.57079
+
+[node name="Spike39" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 218 )
+rotation = 1.57079
+
+[node name="Spike40" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 224 )
+rotation = 1.57079
+
+[node name="Spike41" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 230 )
+rotation = 1.57079
+
+[node name="Spike42" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 52, 236 )
+rotation = 1.57079
+
+[node name="Spike4" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 261, 364 )
+
+[node name="Spike5" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 267, 364 )
+
+[node name="Spike6" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 273, 364 )
+
+[node name="Spike7" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 279, 364 )
+
+[node name="Spike8" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 285, 364 )
+
+[node name="Spike9" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 291, 364 )
+
+[node name="Spike10" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 297, 364 )
+
+[node name="Spike11" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 237, 364 )
+
+[node name="Spike12" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 231, 364 )
+
+[node name="Spike13" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 225, 364 )
+
+[node name="Spike14" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 219, 364 )
+
+[node name="Spike15" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 213, 364 )
+
+[node name="Spike16" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 207, 364 )
+
+[node name="Spike17" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 201, 364 )
+
+[node name="Spike18" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 195, 364 )
+
+[node name="Spike43" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 351, 364 )
+
+[node name="Spike49" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 357, 364 )
+
+[node name="Spike50" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 363, 364 )
+
+[node name="Spike51" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 369, 364 )
+
+[node name="Spike52" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 375, 364 )
+
+[node name="Spike53" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 381, 364 )
+
+[node name="Spike58" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 345, 364 )
+
+[node name="Spike59" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 339, 364 )
+
+[node name="Spike60" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 333, 364 )
+
+[node name="Spike61" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 327, 364 )
+
+[node name="Spike62" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 321, 364 )
+
+[node name="Spike63" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 315, 364 )
+
+[node name="Spike54" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 440, 364 )
+
+[node name="Spike55" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 446, 364 )
+
+[node name="Spike56" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 452, 364 )
+
+[node name="Spike57" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 458, 364 )
+
+[node name="Spike68" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 434, 364 )
+
+[node name="Spike69" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 428, 364 )
+
+[node name="Spike70" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 422, 364 )
+
+[node name="Spike71" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 416, 364 )
+
+[node name="Spike72" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 410, 364 )
+
+[node name="Spike73" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 404, 364 )
+
+[node name="Spike64" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 309, 364 )
+
+[node name="Spike65" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 303, 364 )
+
+[node name="Big Hearth" type="Node2D" parent="TileMap"]
+z_index = -1
+
+[node name="painting3" type="Sprite" parent="TileMap"]
+position = Vector2( 91, 83 )
+z_index = -1
+texture = ExtResource( 14 )
+
+[node name="Blockers" type="Node2D" parent="TileMap"]
+position = Vector2( 0, 8 )
+z_index = -1
+
+[node name="Blocker2" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 276 )
+color = 3
+
+[node name="Blocker3" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 268 )
+color = 3
+
+[node name="Blocker4" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 260 )
+color = 3
+
+[node name="Blocker65" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 212, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker66" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 204, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker67" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 196, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker68" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 236, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker69" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 228, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker70" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 220, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker80" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 260, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker81" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 252, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker84" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 244, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker85" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 284, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker86" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 276, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker87" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 268, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker88" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 308, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker89" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 300, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker90" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 292, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker91" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 332, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker92" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 324, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker93" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 316, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker94" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 356, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker95" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 348, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker96" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 340, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker97" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 380, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker98" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 372, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker99" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 0.56, 0.93, 0.56, 1 )
+position = Vector2( 364, 320 )
+rotation = 1.5708
+color = 2
+
+[node name="Blocker5" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 252 )
+color = 3
+
+[node name="Blocker6" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 244 )
+color = 3
+
+[node name="Blocker7" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 236 )
+color = 3
+
+[node name="Blocker8" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 228 )
+color = 3
+
+[node name="Blocker9" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 220 )
+color = 3
+
+[node name="Blocker10" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 212 )
+color = 3
+
+[node name="Blocker11" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 204 )
+color = 3
+
+[node name="Blocker12" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 196 )
+color = 3
+
+[node name="Blocker13" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 188 )
+color = 3
+
+[node name="Blocker14" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 180 )
+color = 3
+
+[node name="Blocker15" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 172 )
+color = 3
+
+[node name="Blocker16" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 164 )
+color = 3
+
+[node name="Blocker17" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 156 )
+color = 3
+
+[node name="Blocker18" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 148 )
+color = 3
+
+[node name="Blocker19" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 140 )
+color = 3
+
+[node name="Blocker20" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 132 )
+color = 3
+
+[node name="Blocker21" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 124 )
+color = 3
+
+[node name="Blocker22" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 116 )
+color = 3
+
+[node name="Blocker23" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 108 )
+color = 3
+
+[node name="Blocker24" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 100 )
+color = 3
+
+[node name="Blocker25" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 92 )
+color = 3
+
+[node name="Blocker26" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 84 )
+color = 3
+
+[node name="Blocker27" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 76 )
+color = 3
+
+[node name="Blocker28" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 68 )
+color = 3
+
+[node name="Blocker29" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 60 )
+color = 3
+
+[node name="Blocker30" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 52 )
+color = 3
+
+[node name="Blocker31" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 44 )
+color = 3
+
+[node name="Blocker32" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 36 )
+color = 3
+
+[node name="Blocker33" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 28 )
+color = 3
+
+[node name="Blocker34" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 20 )
+color = 3
+
+[node name="Blocker35" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 12 )
+color = 3
+
+[node name="Blocker36" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, 4 )
+color = 3
+
+[node name="Blocker37" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -4 )
+color = 3
+
+[node name="Blocker38" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -12 )
+color = 3
+
+[node name="Blocker39" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -20 )
+color = 3
+
+[node name="Blocker40" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -28 )
+color = 3
+
+[node name="Blocker41" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -36 )
+color = 3
+
+[node name="Blocker42" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -44 )
+color = 3
+
+[node name="Blocker43" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -52 )
+color = 3
+
+[node name="Blocker44" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -60 )
+color = 3
+
+[node name="Blocker45" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -68 )
+color = 3
+
+[node name="Blocker46" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -76 )
+color = 3
+
+[node name="Blocker47" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -84 )
+color = 3
+
+[node name="Blocker48" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -92 )
+color = 3
+
+[node name="Blocker49" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -100 )
+color = 3
+
+[node name="Blocker50" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -108 )
+color = 3
+
+[node name="Blocker51" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -116 )
+color = 3
+
+[node name="Blocker52" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -124 )
+color = 3
+
+[node name="Blocker53" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -132 )
+color = 3
+
+[node name="Blocker54" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -140 )
+color = 3
+
+[node name="Blocker55" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -148 )
+color = 3
+
+[node name="Blocker56" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -156 )
+color = 3
+
+[node name="Blocker57" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -164 )
+color = 3
+
+[node name="Blocker58" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -172 )
+color = 3
+
+[node name="Blocker59" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -180 )
+color = 3
+
+[node name="Blocker60" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -188 )
+color = 3
+
+[node name="Blocker61" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -196 )
+color = 3
+
+[node name="Blocker62" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -204 )
+color = 3
+
+[node name="Blocker63" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -212 )
+color = 3
+
+[node name="Blocker64" parent="TileMap/Blockers" instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 0, 1 )
+position = Vector2( 392, -220 )
+color = 3
+
+[node name="baba" type="Node2D" parent="TileMap/Blockers"]
+position = Vector2( 142, 66 )
+rotation = 1.57079
+
+[node name="Blocker71" parent="TileMap/Blockers/baba" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -22, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker72" parent="TileMap/Blockers/baba" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -30, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker73" parent="TileMap/Blockers/baba" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -38, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker74" parent="TileMap/Blockers/baba" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 2, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker75" parent="TileMap/Blockers/baba" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -6, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker76" parent="TileMap/Blockers/baba" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -14, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker77" parent="TileMap/Blockers/baba" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 26, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker78" parent="TileMap/Blockers/baba" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 18, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker79" parent="TileMap/Blockers/baba" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 10, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker82" parent="TileMap/Blockers/baba" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 34, -8 )
+rotation = 1.5708
+color = 1
+
+[node name="baba2" type="Node2D" parent="TileMap/Blockers"]
+position = Vector2( 142, -14 )
+rotation = 1.57079
+
+[node name="Blocker71" parent="TileMap/Blockers/baba2" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -22, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker72" parent="TileMap/Blockers/baba2" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -30, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker73" parent="TileMap/Blockers/baba2" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -38, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker74" parent="TileMap/Blockers/baba2" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 2, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker75" parent="TileMap/Blockers/baba2" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -6, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker76" parent="TileMap/Blockers/baba2" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -14, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker77" parent="TileMap/Blockers/baba2" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 26, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker78" parent="TileMap/Blockers/baba2" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 18, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker79" parent="TileMap/Blockers/baba2" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 10, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker82" parent="TileMap/Blockers/baba2" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 34, -8 )
+rotation = 1.5708
+color = 1
+
+[node name="baba3" type="Node2D" parent="TileMap/Blockers"]
+position = Vector2( 142, -94 )
+rotation = 1.57079
+
+[node name="Blocker71" parent="TileMap/Blockers/baba3" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -22, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker72" parent="TileMap/Blockers/baba3" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -30, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker73" parent="TileMap/Blockers/baba3" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -38, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker74" parent="TileMap/Blockers/baba3" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 2, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker75" parent="TileMap/Blockers/baba3" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -6, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker76" parent="TileMap/Blockers/baba3" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( -14, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker77" parent="TileMap/Blockers/baba3" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 26, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker78" parent="TileMap/Blockers/baba3" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 18, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker79" parent="TileMap/Blockers/baba3" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 10, -7.99999 )
+rotation = 1.5708
+color = 1
+
+[node name="Blocker82" parent="TileMap/Blockers/baba3" instance=ExtResource( 10 )]
+modulate = Color( 0.54, 0.17, 0.89, 1 )
+position = Vector2( 34, -8 )
+rotation = 1.5708
+color = 1
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 529, 332 )
+
+[node name="Box" parent="." instance=ExtResource( 3 )]
+position = Vector2( 433, 345 )
+color = 3
+
+[node name="Box2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 312, 343 )
+color = 1
+
+[node name="Box3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 191, 260 )
+color = 2
+
+[node name="Box4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 184, 89 )
+color = 1
+
+[node name="Death" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1076, 282 )
+direction = Vector2( -1, 0 )

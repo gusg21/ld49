@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://splash/Splash.gd" type="Script" id=1]
+[ext_resource path="res://mainmenu/elliott_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://splash/Wobble Splash Screen.wav" type="AudioStream" id=3]
+
+[node name="Splash" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
+[node name="Logo" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -52.0
+margin_top = -8.0
+margin_right = 52.0
+margin_bottom = 32.0
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center][rainbow][wave]VOICE BOX GAMES"
+text = "VOICE BOX GAMES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"

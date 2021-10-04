@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://box/Standard Box.png" type="Texture" id=1]
+[ext_resource path="res://box/Box.gd" type="Script" id=2]
+[ext_resource path="res://box/Box SFX.tscn" type="PackedScene" id=3]
+[ext_resource path="res://box/Boxsplosion.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 22, 8 )
+
+[node name="Box" type="RigidBody2D" groups=[
+"boxes",
+]]
+input_pickable = true
+mass = 6.97
+continuous_cd = 2
+contacts_reported = 2
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="SFX" parent="." instance=ExtResource( 3 )]
+
+[node name="GFX" type="NinePatchRect" parent="."]
+margin_left = -25.0
+margin_top = -10.0
+margin_right = 23.0
+margin_bottom = 10.0
+rect_pivot_offset = Vector2( 24, 10 )
+texture = ExtResource( 1 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 0 )
+shape = SubResource( 1 )
+
+[node name="Reject" type="Area2D" parent="."]
+
+[node name="Collider" type="CollisionShape2D" parent="Reject"]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+
+[node name="Explosion" parent="." instance=ExtResource( 4 )]
+
+[connection signal="body_entered" from="." to="." method="_on_Box_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_Box_body_shape_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_Box_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Box_mouse_exited"]

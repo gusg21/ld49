@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://player/particle.png" type="Texture" id=1]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.00852273, 0.984086 ), 0.0, 0.0, 0, 0, Vector2( 0.528409, 0.96381 ), 0.0, 0.0, 0, 0, Vector2( 0.988636, 0 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Explosion" type="CPUParticles2D"]
+emitting = false
+amount = 200
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.91
+texture = ExtResource( 1 )
+spread = 180.0
+gravity = Vector2( 0, 2200 )
+initial_velocity = 732.04
+scale_amount_curve = SubResource( 3 )

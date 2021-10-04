@@ -1,0 +1,124 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://map/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://box/Box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://door/door2.png" type="Texture" id=4]
+[ext_resource path="res://map/restart-decal.png" type="Texture" id=5]
+[ext_resource path="res://door/End Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/Level2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/Restart Decal.gd" type="Script" id=8]
+[ext_resource path="res://map/restart-decal-controller.png" type="Texture" id=9]
+[ext_resource path="res://map/Small Chimney Tile.png" type="Texture" id=11]
+[ext_resource path="res://map/Dresser.png" type="Texture" id=12]
+[ext_resource path="res://map/Torch.tscn" type="PackedScene" id=13]
+[ext_resource path="res://map/Small Hearth1.png" type="Texture" id=14]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Restart Decal" type="Sprite" parent="."]
+position = Vector2( 243, 195 )
+texture = ExtResource( 5 )
+script = ExtResource( 8 )
+controller_decal = ExtResource( 9 )
+keyboard_decal = ExtResource( 5 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 65538, 23, 0, 65536, 65536, 0, 65538, 65559, 0, 65536, 131072, 0, 65538, 131095, 0, 65536, 196608, 0, 65538, 196631, 0, 65536, 262144, 0, 65538, 262145, 0, 131073, 262146, 0, 131073, 262147, 0, 131073, 262148, 0, 131073, 262149, 0, 131073, 262150, 0, 131073, 262151, 0, 131073, 262152, 0, 131073, 262153, 0, 131073, 262154, 0, 131073, 262155, 0, 131073, 262156, 0, 131073, 262157, 0, 131073, 262158, 0, 131073, 262159, 0, 131073, 262160, 0, 131073, 262161, 0, 131073, 262162, 0, 131073, 262163, 0, 131073, 262164, 0, 131073, 262165, 0, 131073, 262166, 0, 131073, 262167, 0, 65536, 327680, 0, 65538, 327703, 0, 65536, 393216, 0, 65538, 393239, 0, 65536, 458752, 0, 65538, 458775, 0, 65536, 524288, 0, 65538, 524292, 0, 196612, 524293, 0, 196613, 524311, 0, 65536, 589824, 0, 65538, 589828, 0, 262148, 589829, 0, 262149, 589847, 0, 65536, 655360, 0, 65538, 655364, 0, 327684, 655365, 0, 327685, 655383, 0, 65536, 720896, 0, 65538, 720897, 0, 1, 720898, 0, 1, 720899, 0, 1, 720900, 0, 1, 720901, 0, 1, 720902, 0, 1, 720903, 0, 2, 720919, 0, 65536, 786432, 0, 65538, 786439, 0, 65538, 786455, 0, 65536, 851968, 0, 65538, 851975, 0, 65538, 851991, 0, 65536, 917504, 0, 65538, 917511, 0, 65538, 917527, 0, 65536, 983040, 0, 65538, 983047, 0, 65538, 983058, 0, 4, 983059, 0, 196613, 983063, 0, 65536, 1048576, 0, 65538, 1048583, 0, 65538, 1048594, 0, 65540, 1048595, 0, 196613, 1048599, 0, 65536, 1114112, 0, 65538, 1114119, 0, 65538, 1114130, 0, 131076, 1114131, 0, 131077, 1114135, 0, 65536, 1179648, 0, 65538, 1179649, 0, 1, 1179650, 0, 1, 1179651, 0, 1, 1179652, 0, 1, 1179653, 0, 1, 1179654, 0, 1, 1179655, 0, 1, 1179656, 0, 1, 1179657, 0, 1, 1179658, 0, 1, 1179659, 0, 1, 1179660, 0, 1, 1179661, 0, 1, 1179662, 0, 1, 1179663, 0, 1, 1179664, 0, 1, 1179665, 0, 1, 1179666, 0, 1, 1179667, 0, 1, 1179668, 0, 1, 1179669, 0, 1, 1179670, 0, 1, 1179671, 0, 65536, 1245184, 0, 65538, 1245207, 0, 65536, 1310720, 0, 65538, 1310743, 0, 65536, 1376256, 0, 65538, 1376279, 0, 65536, 1441792, 0, 65538, 1441815, 0, 65536, 1507328, 0, 65538, 1507351, 0, 65536, 1572864, 0, 65538, 1572887, 0, 65536, 1638400, 0, 65538, 1638423, 0, 65536, 1703936, 0, 65538, 1703959, 0, 65536, 1769472, 0, 65538, 1769495, 0, 65536, 1835008, 0, 65538, 1835031, 0, 65536, 1900544, 0, 65538, 1900567, 0, 65536, 1966080, 0, 65538, 1966103, 0, 65536, 2031616, 0, 65538 )
+
+[node name="Start Door" type="Sprite" parent="TileMap"]
+position = Vector2( 326, 264 )
+texture = ExtResource( 4 )
+
+[node name="End Door" parent="TileMap" instance=ExtResource( 6 )]
+position = Vector2( 98, 152 )
+scene = ExtResource( 7 )
+
+[node name="Torch" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( 295, 236 )
+z_index = -1
+
+[node name="Torch5" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( -165, 267 )
+z_index = -1
+offset = Vector2( 360, -30 )
+
+[node name="Torch6" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( -196, 267 )
+z_index = -1
+frame = 0
+offset = Vector2( 360, -30 )
+
+[node name="Torch2" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( 316, 236 )
+z_index = -1
+frame = 0
+
+[node name="Torch3" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( 337, 236 )
+z_index = -1
+frame = 0
+
+[node name="Torch4" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( 358, 236 )
+z_index = -1
+
+[node name="Dresser" type="Sprite" parent="TileMap"]
+position = Vector2( 50, 168 )
+z_index = -1
+texture = ExtResource( 12 )
+
+[node name="Small Hearth1" type="Sprite" parent="TileMap"]
+position = Vector2( 31, 168 )
+z_index = -1
+texture = ExtResource( 14 )
+
+[node name="Small Chimney Tile" type="Sprite" parent="TileMap"]
+position = Vector2( 31, 154 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Small Chimney Tile2" type="Sprite" parent="TileMap"]
+position = Vector2( 31, 142 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Small Chimney Tile3" type="Sprite" parent="TileMap"]
+position = Vector2( 31, 130 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Small Chimney Tile6" type="Sprite" parent="TileMap"]
+position = Vector2( 31, 106 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Small Chimney Tile7" type="Sprite" parent="TileMap"]
+position = Vector2( 31, 94 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Small Chimney Tile4" type="Sprite" parent="TileMap"]
+position = Vector2( 31, 118 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Small Chimney Tile5" type="Sprite" parent="TileMap"]
+position = Vector2( 31, 82 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 289, 281 )
+
+[node name="Box" parent="." instance=ExtResource( 3 )]
+position = Vector2( 264, 214 )
+
+[node name="Box3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 268, 107 )
+
+[node name="Box2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 228, 259 )

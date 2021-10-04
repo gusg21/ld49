@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://map/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://box/Box Square Small.tscn" type="PackedScene" id=3]
+[ext_resource path="res://door/door2.png" type="Texture" id=4]
+[ext_resource path="res://spike/Spike.tscn" type="PackedScene" id=5]
+[ext_resource path="res://door/End Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/Level3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://map/painting1.png" type="Texture" id=10]
+[ext_resource path="res://map/Torch.tscn" type="PackedScene" id=11]
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 65538, 39, 0, 65536, 65536, 0, 65538, 65575, 0, 65536, 131072, 0, 65538, 131111, 0, 65536, 196608, 0, 65538, 196647, 0, 65536, 262144, 0, 65538, 262145, 0, 131073, 262146, 0, 131073, 262147, 0, 131073, 262148, 0, 131073, 262149, 0, 131073, 262150, 0, 131073, 262151, 0, 131073, 262152, 0, 131073, 262153, 0, 131073, 262154, 0, 131073, 262155, 0, 131073, 262156, 0, 131073, 262157, 0, 131073, 262158, 0, 131073, 262159, 0, 131073, 262160, 0, 131073, 262161, 0, 131073, 262162, 0, 131073, 262163, 0, 131073, 262164, 0, 131073, 262165, 0, 131073, 262166, 0, 131073, 262167, 0, 131073, 262168, 0, 131073, 262169, 0, 131073, 262170, 0, 131073, 262171, 0, 131073, 262172, 0, 131073, 262173, 0, 131073, 262174, 0, 131073, 262175, 0, 131073, 262176, 0, 131073, 262177, 0, 131073, 262178, 0, 131073, 262179, 0, 131073, 262180, 0, 131073, 262181, 0, 131073, 262182, 0, 131073, 262183, 0, 65536, 327680, 0, 65538, 327689, 0, 65539, 327719, 0, 65536, 393216, 0, 65538, 393225, 0, 65539, 393255, 0, 65536, 458752, 0, 65538, 458761, 0, 65539, 458791, 0, 65536, 524288, 0, 65538, 524292, 0, 196612, 524293, 0, 196613, 524297, 0, 65539, 524327, 0, 65536, 589824, 0, 65538, 589828, 0, 262148, 589833, 0, 65539, 589863, 0, 65536, 655360, 0, 65538, 655364, 0, 327684, 655369, 0, 65539, 655399, 0, 65536, 720896, 0, 65538, 720905, 0, 131075, 720926, 0, 0, 720927, 0, 1, 720928, 0, 1, 720929, 0, 1, 720930, 0, 1, 720931, 0, 1, 720932, 0, 1, 720933, 0, 1, 720934, 0, 1, 720935, 0, 65536, 786432, 0, 65538, 786462, 0, 65536, 786471, 0, 65536, 851968, 0, 65538, 851998, 0, 65536, 852007, 0, 65536, 917504, 0, 65538, 917513, 0, 3, 917534, 0, 65536, 917543, 0, 65536, 983040, 0, 65538, 983049, 0, 65539, 983070, 0, 65536, 983074, 0, 4, 983079, 0, 65536, 1048576, 0, 65538, 1048585, 0, 65539, 1048606, 0, 65536, 1048615, 0, 65536, 1114112, 0, 65538, 1114121, 0, 65539, 1114142, 0, 65536, 1114146, 0, 131076, 1114147, 0, 131077, 1114151, 0, 65536, 1179648, 0, 65538, 1179649, 0, 1, 1179650, 0, 1, 1179651, 0, 1, 1179652, 0, 1, 1179653, 0, 1, 1179654, 0, 1, 1179655, 0, 1, 1179656, 0, 1, 1179657, 0, 1, 1179658, 0, 1, 1179659, 0, 1, 1179660, 0, 1, 1179661, 0, 1, 1179662, 0, 1, 1179663, 0, 1, 1179664, 0, 1, 1179665, 0, 1, 1179666, 0, 1, 1179667, 0, 1, 1179668, 0, 1, 1179669, 0, 1, 1179670, 0, 1, 1179671, 0, 1, 1179672, 0, 1, 1179673, 0, 1, 1179674, 0, 1, 1179675, 0, 1, 1179676, 0, 1, 1179677, 0, 1, 1179678, 0, 1, 1179679, 0, 1, 1179680, 0, 1, 1179681, 0, 1, 1179682, 0, 1, 1179683, 0, 1, 1179684, 0, 1, 1179685, 0, 1, 1179686, 0, 1, 1179687, 0, 65536, 1245184, 0, 65538, 1245223, 0, 65536, 1310720, 0, 65538, 1310759, 0, 65536, 1376256, 0, 65538, 1376295, 0, 65536, 1441792, 0, 65538, 1441831, 0, 65536, 1507328, 0, 65538, 1507367, 0, 65536, 1572864, 0, 65538, 1572903, 0, 65536, 1638400, 0, 65538, 1638439, 0, 65536, 1703936, 0, 65538, 1703975, 0, 65536, 1769472, 0, 65538, 1769511, 0, 65536, 1835008, 0, 65538, 1835047, 0, 65536, 1900544, 0, 65538, 1900583, 0, 65536, 1966080, 0, 65538, 1966119, 0, 65536, 2031616, 0, 65538 )
+
+[node name="Start Door" type="Sprite" parent="TileMap"]
+position = Vector2( 41, 264 )
+texture = ExtResource( 4 )
+
+[node name="End Door" parent="TileMap" instance=ExtResource( 6 )]
+position = Vector2( 582, 151 )
+scene = ExtResource( 9 )
+
+[node name="Spikes" type="Node" parent="TileMap"]
+
+[node name="Spike" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 172, 284 )
+
+[node name="Spike2" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 178, 284 )
+
+[node name="Spike3" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 184, 284 )
+
+[node name="Spike4" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 190, 284 )
+
+[node name="Spike5" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 196, 284 )
+
+[node name="Spike6" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 202, 284 )
+
+[node name="Spike7" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 208, 284 )
+
+[node name="Spike8" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 214, 284 )
+
+[node name="Spike9" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 220, 284 )
+
+[node name="Spike10" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 226, 284 )
+
+[node name="Spike11" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 232, 284 )
+
+[node name="Spike12" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 238, 284 )
+
+[node name="Spike13" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 244, 284 )
+
+[node name="Spike14" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 250, 284 )
+
+[node name="Spike15" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 256, 284 )
+
+[node name="Spike16" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 262, 284 )
+
+[node name="Spike17" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 268, 284 )
+
+[node name="Spike18" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 274, 284 )
+
+[node name="Spike19" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 280, 284 )
+
+[node name="Spike20" parent="TileMap/Spikes" instance=ExtResource( 5 )]
+position = Vector2( 286, 284 )
+
+[node name="Torch" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 182, 253 )
+frame = 0
+
+[node name="Torch2" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 205, 253 )
+frame = 0
+
+[node name="Torch3" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 227, 253 )
+
+[node name="Torch4" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 252, 253 )
+
+[node name="Torch5" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 277, 253 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 69, 271 )
+
+[node name="Box" parent="." instance=ExtResource( 3 )]
+position = Vector2( 304, 273 )
+
+[node name="Box3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 130, 274 )
+
+[node name="painting1" type="Sprite" parent="."]
+position = Vector2( 94, 253 )
+texture = ExtResource( 10 )

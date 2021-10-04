@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://torch_frames.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://map/Torch.gd" type="Script" id=2]
+
+[node name="Torch" type="AnimatedSprite"]
+frames = ExtResource( 1 )
+frame = 1
+playing = true
+script = ExtResource( 2 )

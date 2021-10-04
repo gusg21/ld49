@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://box/dragged.wav" type="AudioStream" id=1]
+[ext_resource path="res://box/explode.wav" type="AudioStream" id=2]
+[ext_resource path="res://box/collide.wav" type="AudioStream" id=3]
+[ext_resource path="res://player/hit.wav" type="AudioStream" id=4]
+
+[node name="SFX" type="Node2D"]
+
+[node name="Landed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Collide" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = 8.078
+bus = "SFX"
+
+[node name="Dragged" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = 6.563
+bus = "SFX"
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -5.063
+bus = "SFX"

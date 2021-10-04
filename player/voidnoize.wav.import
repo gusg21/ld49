@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/voidnoize.wav-2dfa4a620bb4b1f9e7e80635acf066f2.sample"
+
+[deps]
+
+source_file="res://player/voidnoize.wav"
+dest_files=[ "res://.import/voidnoize.wav-2dfa4a620bb4b1f9e7e80635acf066f2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
