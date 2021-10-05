@@ -39,10 +39,10 @@ func select():
 	elif index == 2:
 		get_tree().quit()
 
-func _process(delta):
+func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if index == 0:
-			set_process(false)
+			set_physics_process(false)
 			$BGM.stop()
 			$Timer.start()
 			$Confirm.play()

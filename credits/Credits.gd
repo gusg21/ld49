@@ -25,7 +25,7 @@ func _ready():
 	else:
 		$BGM.play(Globals.MUSIC_TIMECODE)
 
-func _process(delta):
+func _physics_process(delta):
 	time += delta
 	$Text.bbcode_text = "[center][b]" + text[index][0] + "[/b]\n" + text[index][1]
 	$Text.modulate.a = min(time, 1)

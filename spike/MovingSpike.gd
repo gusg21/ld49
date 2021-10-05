@@ -14,7 +14,7 @@ func _ready():
 		$"Stab Pre-delay".wait_time = delay
 		$"Stab Pre-delay".start()
 
-func _process(delta):
+func _physics_process(delta):
 	if extending: # extend
 		position.y += delta * 250 * (-1 if up else 1)
 		if !up:

@@ -53,7 +53,7 @@ func _input(event):
 			$SFX/Dragged.stop()
 			global_position = last_position
 		
-func _process(delta):
+func _physics_process(delta):
 	if is_instance_valid(Globals.PLAYER):
 		if Globals.PLAYER.dead:
 			dragging = false

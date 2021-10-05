@@ -16,7 +16,7 @@ func shake(time, scale = 5):
 func set_lens_a(a):
 	lens_cover.modulate.a = a
 
-func _process(delta):
+func _physics_process(delta):
 	print(lens_cover.modulate.a)
 	shake_time -= delta
 	if shake_time < 0:
