@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://splash/Splash.gd" type="Script" id=1]
 [ext_resource path="res://mainmenu/elliott_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://splash/Wobble Splash Screen.wav" type="AudioStream" id=3]
+[ext_resource path="res://splash/Logo.gd" type="Script" id=4]
+[ext_resource path="res://mainmenu/elliott.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 5 )
 
 [node name="Splash" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,8 +16,25 @@ script = ExtResource( 1 )
 current = true
 zoom = Vector2( 0.25, 0.25 )
 
+[node name="Audio Warning" type="Label" parent="."]
+visible = false
+margin_left = -84.0
+margin_top = 37.0
+margin_right = 250.0
+margin_bottom = 75.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Audio is buggy on Chrome!
+If you're using chrome and experiencing issues, try switching browsers."
+align = 1
+valign = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Logo" type="RichTextLabel" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = -52.0
 margin_top = -8.0
 margin_right = 52.0

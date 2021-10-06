@@ -3,10 +3,12 @@ extends Node2D
 var time = 0
 var sound_played : bool = false
 
-func _process(delta):
+func _physics_process(delta):
 	time += delta
 	
-	$Logo.modulate.a = 20 - time * 5
+	var new_a = 20 - time * 5
+	$Logo.modulate.a = new_a
+	$"Audio Warning".modulate.a = new_a
 	
 	if time > 1 and not sound_played:
 		$Sound.play()
